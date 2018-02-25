@@ -730,6 +730,7 @@ nav a:hover {
 	font-size: 14px;
 	margin-top: 10px;
 	margin-bottom: 5px;
+	white-space: nowrap;
 }
 
 .work-hidden span {
