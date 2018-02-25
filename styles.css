@@ -878,6 +878,10 @@ nav a:hover {
 	padding-bottom: 60px;
 }
 
+.map a {
+	text-decoration: none;
+}
+
 .map img {
 	padding-top: 60px;
 }
