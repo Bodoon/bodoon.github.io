@@ -592,6 +592,9 @@ nav a:hover {
 
 .teammate {
 	position: relative;
+	top: 0;
+	left: 0;
+	transition: all 300ms ease;
 }
 
 .teammate img {
@@ -703,10 +706,7 @@ nav a:hover {
 }
 
 .work-item {
-	position: relative;
-	top: 0;
-	left: 0;
-	transition: all 300ms ease;
+	position: relative;	
 }
 
 .work-item img {
