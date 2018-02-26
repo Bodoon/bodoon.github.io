@@ -274,6 +274,9 @@ nav a:hover {
 
 .about-item {
 	position: relative;
+	top: 0;
+	left: 0;
+	transition: all 300ms ease;
 }
 
 .about-item img {
@@ -701,6 +704,9 @@ nav a:hover {
 
 .work-item {
 	position: relative;
+	top: 0;
+	left: 0;
+	transition: all 300ms ease;
 }
 
 .work-item img {
