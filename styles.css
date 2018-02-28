@@ -250,6 +250,71 @@ nav a:hover {
 	color: #fce38a;
 	border: 3px solid #fce38a;
 }
+
+@media (max-height: 768px) {
+	.banner {
+		padding-bottom: 140px;
+	}
+
+	.banner .line {
+		margin: 49px auto;
+	}
+
+	header {
+		padding-top: 21px;
+	}
+
+	.logo {
+		font-size: 21px;
+	}
+
+	.menu nav {
+		margin-right: 35px;
+	}
+	
+	.menu-item {
+		font-size: 10px;
+		margin-right: 35px;
+	}
+	
+	.menu-item:last-child {
+		margin-right: 0;
+	}
+	
+	nav a:hover {
+		border-bottom: 2px solid #fce38a;
+		padding-bottom: 7px;
+		margin-bottom: 119px;
+	}
+	
+	.more {
+		margin: 0 auto;
+		margin-top: 35px;
+		height: 28px;
+		width: 210px;
+	}
+	
+	.more a {
+		font-size: 10px;
+		border: 2px solid #fff;
+		padding: 9px 14px;
+	}
+	
+	.more a:hover {
+		color: #fce38a;
+		border: 2px solid #fce38a;
+	}
+
+	h2 {
+		font-size: 50px;
+		margin-top: 126px;
+	}
+	
+	h1 {
+		font-size: 105px;
+		margin-top: 28px;
+	}
+}
 /*BANNER SECTION#1 END*/
 
 /*ABOUT SECTION#2 START*/
