@@ -187,13 +187,14 @@ input[type="checkbox"]:checked {
     font-weight: bold;    
     text-decoration: none;
     line-height: 105%;
+    white-space: nowrap;
 }
 
 .login.help {
     color: #474747;
     font-size: 14px;    
     border-bottom: 2px solid #656565;
-    white-space: nowrap;
+    margin-left: 5px;    
 }
 
 .login.help:hover {
@@ -211,7 +212,8 @@ input[type="checkbox"]:checked {
     text-align: center;
     padding-top: 31px;
     padding-bottom: 35px;
-
+    padding-right: 40px;
+    padding-left: 40px;
 }
 
 .popup__footer span {
@@ -246,5 +248,10 @@ input[type="checkbox"]:checked {
     .col-2-of-2 {     
         border-left: none;
         border-bottom: 1px solid #cfcfcf;         
+    }
+
+    .popup__footer {
+        padding-right: 90px;
+        padding-left: 90px;
     }
 }
