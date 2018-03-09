@@ -16,9 +16,9 @@
     background: #e8e8e8;
 }
 
-
-    .popup {
-    width: 842px;
+.popup {
+    width: 100%;
+    max-width: 482px;
     position: relative;
     border-top: 2px solid #e62b1e;
     border-right: 1px solid #d9d9d9;
@@ -57,18 +57,22 @@
 }
 
 .popup__body {
-    background-color: #f3f3f3;
-    padding: 40px 0px;    
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 0 5px;
+    background-color: #f3f3f3;      
 }
 
-.col-1-of-2 {
-    width:50%;
-    float: left;
-    padding: 0px 60px;
+.col-1-of-2, .col-2-of-2 {
+    width: 100%;
+    padding: 24px 0;
+    max-width: 300px;    
 }
 
 .button {
     width: 100%;
+    max-width: 300px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -112,14 +116,13 @@
 }
 
 .col-2-of-2 {
-    width:50%;
-    float: right;
-    border-left: 1px solid #cfcfcf;
-    padding: 0px 60px;
+    border-bottom: 1px solid #cfcfcf;    
 }
 
 .form-field {
+    width: 100%;
     margin-bottom: 20px;
+    max-width: 300px;
 }
 
 .form-field:nth-child(2) {
@@ -213,14 +216,15 @@ input[type="checkbox"]:checked {
     text-align: center;
     padding-top: 31px;
     padding-bottom: 35px;
-    padding-right: 40px;
-    padding-left: 40px;
+    padding-right: 0px;
+    padding-left: 0px;
 }
 
 .popup__footer span {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
     color: #666;
+    white-space: nowrap;
 }
 
 .sign-up.help {
@@ -230,45 +234,36 @@ input[type="checkbox"]:checked {
 }
 
 
-@media (max-width: 841px) { 
+@media (min-width: 842px) { 
     .popup {
-        max-width: 482px;
+        min-width: 842px;
+    }
+
+    .popup__body {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;        
+        padding: 40px 0px;
     }
 
     .col-1-of-2, .col-2-of-2 {
-        width: 100%;
-        float: none;
-        padding: 24px 0;
-        max-width: 300px;
+        min-width: 50%;
+        padding: 0px 60px;
+    }
+
+    .col-1-of-2 {        
+        float: left;        
     }
    
-    .popup__body {
-        display: flex;
-        flex-direction: column-reverse;
-        align-items: center;
-        padding: 0 5px;
-    }
-
-    .col-2-of-2 {     
-        border-left: none;
-        border-bottom: 1px solid #cfcfcf;   
+    .col-2-of-2 { 
+        float: right;
+        border-left: 1px solid #cfcfcf;
+        border-bottom: none;   
     }   
 
-    .form-field {
-        width: 100%;
-    }
-
-    .button {
-        width: 100%;
-    }
-
-    .popup__footer {
-        padding-right: 0px;
-        padding-left: 0px;
-    }
-
-    .popup__footer span  {        
-        white-space: nowrap;
+    .popup__footer {        
+        padding-right: 40px;
+        padding-left: 40px;
     }
 }
 
