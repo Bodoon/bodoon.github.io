@@ -228,7 +228,7 @@ input[type="checkbox"]:checked {
     border-bottom: 3px solid #000;
 }
 
-@media (max-width: 841px) and (orientation: portrait) { 
+@media (max-width: 500px) and (orientation: portrait) { 
     .popup {
         max-width: 482px;
     }
