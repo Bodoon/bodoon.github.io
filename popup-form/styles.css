@@ -16,7 +16,8 @@
     background: #e8e8e8;
 }
 
-.popup {
+
+    .popup {
     width: 842px;
     position: relative;
     border-top: 2px solid #e62b1e;
@@ -228,6 +229,7 @@ input[type="checkbox"]:checked {
     border-bottom: 3px solid #000;
 }
 
+
 @media (max-width: 841px) { 
     .popup {
         max-width: 482px;
@@ -269,3 +271,4 @@ input[type="checkbox"]:checked {
         white-space: nowrap;
     }
 }
+
