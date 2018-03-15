@@ -155,6 +155,7 @@ label[for="remember"] {
     margin-left: 7px;
     line-height: 75%;
     display: block;
+    margin-bottom: 0;
 }
 
 input[type="checkbox"] {
