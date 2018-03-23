@@ -161,8 +161,7 @@ header {
 }
 
 .menu { 
-	display: flex;
-	
+	display: flex;	
 }
 
 .menu nav {
@@ -176,6 +175,10 @@ header {
 	color: #fff;
 	font-size: 14px;
 	margin-right: 50px;
+}
+
+.menu-item img {
+	height: 100%;
 }
 
 .menu-item:last-child {
@@ -239,6 +242,10 @@ nav a:hover {
 		margin-right: 35px;
 	}
 	
+	.menu-item img {
+		width: 16px;
+	}
+
 	.menu-item:last-child {
 		margin-right: 0;
 	}
@@ -303,7 +310,7 @@ nav a:hover {
 	position: relative;
 	top: 0;
 	left: 0;
-	transition: all 300ms ease;
+	transition: all 250ms ease;
 }
 
 .about-item img {
@@ -315,7 +322,8 @@ nav a:hover {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	visibility: hidden;
+	opacity: 0;
+	transition: all 200ms ease;
 }
 
 .hidden img {
@@ -338,8 +346,19 @@ nav a:hover {
 }
 
 .about-item:hover .hidden {
-	visibility: visible;
+	opacity: 1;
 	z-index: 10;
+}
+
+.about-item:after {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	content: '';
+	background: linear-gradient(#f38181, #fce38a);
+	top: 0;
+	opacity: 0;
+	transition: all 250ms ease;
 }
 
 .about-item:hover:after {
@@ -386,9 +405,9 @@ nav a:hover {
 	margin-top: 60px;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: 49% 2% 49%;
+	grid-template-rows: 49% 2px 49%;
 	grid-column-gap: 80px;
-	grid-row-gap: 50px;
+	grid-row-gap: 70px;
 }
 
 .gray-line {
@@ -396,10 +415,20 @@ nav a:hover {
 	grid-row: 2;
 }
 
-.img {
-	float: left;
+.img {	
 	margin-right: 25px;
-	height: 70px;
+}
+
+.category {
+	display: flex;
+}
+
+.category:nth-of-type(3n-2) {
+	padding-left: 30px;
+}
+
+.category:nth-of-type(3n) {
+	padding-right: 30px;
 }
 
 .service span {
@@ -421,7 +450,7 @@ nav a:hover {
 
 /*FEATURE SECTION#5 START*/
 .feature {
-	background: url("images/feature-background.jpg") no-repeat center top / cover;
+	background: url("images/feature-background.jpg") no-repeat center top / cover;	
 }
 
 .feature h4 {
@@ -598,8 +627,7 @@ nav a:hover {
 
 .quote p {
 	line-height: 150%;
-	margin-top: 70px;
-	margin-right: 70px;
+	padding-right: 70px;
 	color: #999;
 	font-size: 24px;
 	font-family: "Roboto", sans-serif;
@@ -621,7 +649,7 @@ nav a:hover {
 	position: relative;
 	top: 0;
 	left: 0;
-	transition: all 300ms ease;
+	transition: all 250ms ease;
 }
 
 .teammate img {
@@ -654,10 +682,11 @@ nav a:hover {
 .social {	
 	width: 224px;
 	position: absolute;
-	visibility: hidden;
+	opacity: 0;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+	transition: all 200ms ease;
 }
 
 .social-item {
@@ -683,8 +712,20 @@ nav a:hover {
 }
 
 .teammate:hover .social {
-	visibility: visible;
+	opacity: 1;
 	z-index: 10;
+}
+
+.teammate:after {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	content: '';
+	background: linear-gradient(#f38181, #fce38a);
+	top: 0;
+	left: 0;
+	opacity: 0;
+	transition: all 250ms ease;
 }
 
 .teammate:hover:after {
@@ -733,6 +774,11 @@ nav a:hover {
 	grid-template-rows: repeat(2, 1fr);
 }
 
+.item-3 {
+	grid-column: 3;
+	grid-row: 1 / span 2;
+}
+
 .work-item {
 	position: relative;
 }
@@ -749,7 +795,8 @@ nav a:hover {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	visibility: hidden;
+	opacity: 0;
+	transition: all 200ms ease;
 }
 
 .work-hidden img {
@@ -764,6 +811,7 @@ nav a:hover {
 	font-size: 14px;
 	margin-top: 10px;
 	margin-bottom: 5px;
+	white-space: nowrap;
 }
 
 .work-hidden span {
@@ -780,8 +828,18 @@ nav a:hover {
 }
 
 .work-item:hover .work-hidden {
-	visibility: visible;
+	opacity: 1;
 	z-index: 10;
+}
+
+.work-item:before {
+	content: '';
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	opacity: 0;
+	background-image: linear-gradient(to bottom,#f38181, #fce38a);
+	transition: all 250ms ease;
 }
 
 .work-item:hover:before {
@@ -790,13 +848,9 @@ nav a:hover {
 	height: 100%;
 	position: absolute;
 	opacity: 0.85;
-	background-image: linear-gradient(to bottom,#f38181, #fce38a);
+	background-image: linear-gradient(to bottom,#f38181, #fce38a);	
 }
 
-.item-3 {
-	grid-column: 3;
-	grid-row: 1 / span 2;
-}
 /*WORK SECTION#10 END*/
 
 /*TESTIMONIAL SECTION#11 START*/
@@ -808,8 +862,7 @@ nav a:hover {
 
 .testimonial p {
 	line-height: 150%;
-	margin-top: 30px;
-	margin-right: 70px;
+	padding-right: 70px;
 	color: #999;
 	font-size: 24px;
 	font-family: "Roboto", sans-serif;
@@ -832,13 +885,17 @@ nav a:hover {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	grid-template-rows: repeat(2, 1fr);
-	grid-column-gap: 70px;
+	grid-column-gap: 80px;
+	grid-row-gap: 70px;
+}
+
+.clients-item {
+	display: flex;
 }
 
 .clients-img {
 	margin-right: 25px;
-	float: left;
-	height: 240px;
+	height: auto;
 }
 
 .clients h5 {
@@ -872,7 +929,6 @@ nav a:hover {
 	font-family: "Roboto";
 	font-size: 15px;
 	color: #999999;
-	margin-bottom: 70px;
 }
 /*RESPONSE SECTION#12 END*/
 
@@ -939,10 +995,13 @@ footer {
 	padding-top: 70px;
 }
 
-.footer-grid {
-	display: grid;
-	grid-template-columns: 35% 30% 25%;
-	grid-gap: 5%;
+.footer-flex {
+	display: flex;
+	justify-content: space-between;
+}
+
+.footer-item-1 {
+	width: 480px;
 }
 
 .footer-logo {
@@ -968,8 +1027,8 @@ footer {
 	font-size: 15px;
 	color: #999999;
 	margin-top: 30px;
-	width: 90%;
 	line-height: 150%;
+	width: 95%;
 }
 
 .followers {
@@ -981,7 +1040,6 @@ footer {
 	font-weight: 600;
 	border-bottom: 1px solid #e5e5e5;
 	margin-bottom: 20px;
-	width: 95%;
 }
 
 .number {
@@ -1000,7 +1058,6 @@ footer {
 
 .footer-item-1 ul {
 	list-style: none;
-	display: block;
 	float: left;
 }
 
@@ -1010,14 +1067,19 @@ footer {
 }
 
 .footer-item-1 form {
+	margin-top: 20px;
 	float: left;
 }
 
+.form-field {
+	height: 40px;
+}
+
 .footer-item-1 input {
-	margin-top: 20px;
-	padding: 10px;
 	border: 1px solid #e7e7e7;
 	width: 230px;
+	height: 100%;
+	padding: 10px;
 }
 
 .footer-item-1 input:focus {
@@ -1031,16 +1093,15 @@ footer {
 	font-weight: 800;
 	background: #95e1d3;
 	color: #ffffff;
-	border: 0;
-	padding: 10.5px;
-	position: relative;
-	top: 0.5px;
-	right: 5px;
-	width: 150px;
+	border: none;
+	width: 150px;	
+	height: 100%;
+	margin-left: -5px; 
 }
 
 .footer-item-1 button:active {
 	background: #f38181;
+	outline: none;
 }
 
 input::-webkit-input-placeholder {
@@ -1071,15 +1132,26 @@ input:-moz-placeholder {
   color: #d6d6d6;
 }
 
-.footer-item-img {
-	float: left;
+.footer-item-2 {
+	width: 350px;
+}
+
+.footer-blog {
+	display: flex;
+	margin-bottom: 30px;
+}
+
+.footer-blog-img {
 	margin-right: 20px;
-	font-size: 0;
-	margin-bottom: 25px;
+}
+
+.footer-blog-text {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .footer-item-2 p {
-	padding-top: 10px;
 	font-family: "Montserrat", sans-serif;
 	font-weight: 600;
 	font-size: 12px;
@@ -1095,7 +1167,10 @@ input:-moz-placeholder {
 	color: #adadad;
 	display: block;
 	margin-top: 5px;
-	margin-bottom: 10px;
+}
+
+.footer-item-3 {
+	width: 270px;
 }
 
 .footer-item-3 span {
@@ -1107,11 +1182,11 @@ input:-moz-placeholder {
 	margin-top: 5px;
 }
 
-.nanocontainer {
+.footer-gallery {
 	font-size: 0;
 }
 
-.nanocontainer img {
+.footer-gallery img {
 	margin-right: 2px;
 	margin-bottom: 2px;
 }
@@ -1195,6 +1270,7 @@ input:-moz-placeholder {
 	margin-top: 29px;
 	margin-right: 10px;
 	float: left;
+	margin-bottom: 0;
 }
 
 .carousel-item span {
@@ -1205,6 +1281,11 @@ input:-moz-placeholder {
 	font-weight: normal;
 	text-align: center;
 	color: #333;
+}
+
+.carousel-item {
+	display: flex;
+	align-items: center;
 }
 /****************************\
 | The End of Carousel Styles |
