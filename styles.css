@@ -216,7 +216,7 @@ nav a:hover {
 	border: 3px solid #fce38a;
 }
 
-@media (max-height: 768px) {
+@media (max-height: 1000px) {
 	.banner {
 		padding-bottom: 140px;
 	}
