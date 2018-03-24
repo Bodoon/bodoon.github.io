@@ -177,6 +177,9 @@ header {
 	margin-right: 50px;
 }
 
+.menu-item img {
+	height: 100%;
+}
 
 .menu-item:last-child {
 	margin-right: 0;
@@ -1094,6 +1097,10 @@ footer {
 	width: 150px;	
 	height: 100%;
 	margin-left: -5px; 
+}
+
+.footer-item-1 button:focus {
+	outline: none;
 }
 
 .footer-item-1 button:active {
