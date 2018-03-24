@@ -177,9 +177,6 @@ header {
 	margin-right: 50px;
 }
 
-.menu-item img {
-	height: 100%;
-}
 
 .menu-item:last-child {
 	margin-right: 0;
@@ -1013,8 +1010,8 @@ footer {
 }
 
 .footer-heading {
-	margin-bottom: 41px;
-	margin-top: 15px;
+	margin-bottom: 34px;
+	margin-top: 5px;
 	font-family: "Montserrat", sans-serif;
 	font-size: 14px;
 	text-transform: uppercase;
@@ -1138,7 +1135,7 @@ input:-moz-placeholder {
 
 .footer-blog {
 	display: flex;
-	margin-bottom: 30px;
+	margin-bottom: 19px;
 }
 
 .footer-blog-img {
