@@ -406,8 +406,7 @@ nav a:hover {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: 49% 2px 49%;
-	grid-column-gap: 80px;
-	grid-row-gap: 70px;
+	grid-gap: 60px;
 }
 
 .gray-line {
