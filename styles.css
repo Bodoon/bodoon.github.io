@@ -161,11 +161,13 @@ header {
 }
 
 .menu { 
-	display: flex;	
+	display: flex;
 }
 
 .menu nav {
 	margin-right: 50px;
+	display: flex;
+	align-items: center;
 }
 
 .menu-item {
@@ -178,7 +180,9 @@ header {
 }
 
 .menu-item img {
+	width: 19px;
 	height: 100%;
+	display: block;
 }
 
 .menu-item:last-child {
