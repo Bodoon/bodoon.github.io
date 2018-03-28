@@ -166,8 +166,6 @@ header {
 
 .menu nav {
 	margin-right: 50px;
-	display: flex;
-	align-items: center;
 }
 
 .menu-item {
