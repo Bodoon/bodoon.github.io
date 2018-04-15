@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+$header-height: 40px;
+$footer-height: 30px;
+$page-description-height: 100px;
+$aside-width: 300px;
+$max-width: 1024px;
+$min-width: 320px;
+$screen-small: 480px;
+$padding: 10px;
+
+@mixin mq-small {
+    @media (max-width: $screen-small) {
+        @content;
+    }
+}
+
+.header {
+    position: fixed;
+    background: #ffb3b3;
+    height: $header-height;
+    max-width: $max-width;
+    min-width: $min-width;
+    width: 100%;
+    right: 0;
+    left:0;
+    margin: 0 auto;
+    padding: $padding;
+    z-index: 20;
+}
+
+.container {
+    background: #99bbff;
+    max-width: $max-width;
+    min-width: $min-width;
+    height: calc(100vh - #{$header-height});
+    position: relative;
+    top: $header-height;
+    margin: 0 auto;
+}
+
+.aside {
+    position: absolute;
+    width: $aside-width;
+    background: #ccccb3;
+    top:0;
+    height: 100%;
+    padding: $padding;
+    z-index: 10;
+    display: none;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.aside-left {
+    left: 0;
+}
+
+.aside-right {
+    right: 0;
+}
+
+.wrapper {
+    padding: $padding $padding 0 $padding;
+}
+
+.page-description {
+    height: 100px;
+    background: #99e699;
+    padding: $padding;
+}
+
+.content {
+    display: flex;
+    height: calc(100% - #{$page-description-height} -
+                        #{$footer-height} - #{$padding});
+    justify-content: space-between;
+    padding: $padding;
+    @include mq-small {
+        flex-direction: column;
+    }
+}
+
+.content__item1 {
+    background: #80ffcc;
+    height: 100%;
+    width: 100%;
+    padding: $padding;
+    @include mq-small {
+        order: 2;
+    }
+}
+
+.content__item2 {
+    background: #ffffb3;
+    height: 100%;
+    flex-basis: 200px;
+    flex-grow: 1;
+    position: sticky;
+    top: $header-height;
+    padding: $padding;
+}
+
+.footer {
+    background: #ff9980;
+    height: $footer-height;
+    max-width: $max-width;
+    min-width: $min-width;
+    padding: $padding;
+}
+
+
+
+
