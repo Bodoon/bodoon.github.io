@@ -1,5 +1,5 @@
 
-if (localStorage.getItem('myitems') !== undefined) {
+if (localStorage.getItem('myitems') != undefined) {
     document.getElementById('list').insertAdjacentHTML('beforeEnd', localStorage.getItem('myitems'));;
 }
 
