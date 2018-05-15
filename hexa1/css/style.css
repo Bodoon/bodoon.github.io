@@ -1,0 +1,52 @@
+.row_data {
+    padding: .375rem .75rem;
+    border-radius: .25rem;
+    box-sizing: border-box;
+    min-height: 2.25rem;
+    overflow-x: auto;
+}
+
+.add-data-label {
+    margin: 0;
+}
+
+.add-data-input {
+    display: none;
+}
+
+.sort {
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-size: auto 50%;
+    background-origin: content-box;
+}
+
+.sort-both {
+    background-image: url('../icons/sort-both.svg');
+}
+
+.sort-desc {
+    background-image: url('../icons/sort-desc.svg');
+}
+
+.sort-asc {
+    background-image: url('../icons/sort-asc.svg');
+}
+
+tr:nth-of-type(odd) .row_data {
+    background: rgba(255, 255, 255, 1);
+}
+
+tr:nth-of-type(even) .row_data {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+/*set table columns equal width*/
+th, td {
+    max-width: 1px;
+    min-width: 1px;
+}
+
+th {
+    vertical-align: middle !important;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Table-data Editor</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+
+    <label class="add-data-label btn btn-success" for="files">Add Your Data</label>
+    <input class="add-data-input" type="file" id="files" name="files[]" multiple />
+
+    <button class="btn btn-warning" id="create">Create file</button>
+    <a class="btn btn-primary disabled" id="downloadlink">Download</a>
+
+    <table id="myTable" class="table table-striped table-bordered">
+      <thead class="thead-light">
+        <tr>
+          <!--When a header is clicked, run the sortTable function, with a parameter, 0 for sorting by names, 1 for sorting by value:-->
+          <th onclick="sortTable(0)" id="name" class="sort sort-both">Name</th>
+          <th onclick="sortTable(1)" id="value" class="sort sort-both">Value</th>
+          <th>
+            <button class="btn btn-info add-row">Add New Row</button>
+          </th>
+        </tr>
+      </thead>
+      <tbody id="table-body"></tbody>
+    </table>
+  </div>
+  <!--end of container-->
+
+  <script src="js/main.js"></script>
+  <script src="js/jquery.tabletojson.min.js"></script>
+  <script src="js/sort-table.js"></script>
+</body>
+
+</html>
