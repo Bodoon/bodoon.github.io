@@ -111,17 +111,14 @@ $(document).ready(function ($) {
         return textFile;
     };
 
-    var create = document.getElementById('create');
-    
+    var link = document.getElementById('downloadlink');    
 
-    create.addEventListener('click', function () {
-        //converts table to JSON ignoring 3rd row | --> https://www.github.developerdan.com/table-to-json/ <--
+    link.addEventListener('click', function () {
+        //converts table to JSON ignoring 3rd column | --> https://www.github.developerdan.com/table-to-json/ <--
         var textbox = $('#myTable').tableToJSON();
 
-        var link = document.getElementById('downloadlink');        
         link.href = makeTextFile(textbox);
         link.setAttribute('href', link.href);
         link.setAttribute('download', 'data.json');
-        link.classList.remove("disabled");
     }, false);
 }); 

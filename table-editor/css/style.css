@@ -50,3 +50,7 @@ th, td {
 th {
     vertical-align: middle !important;
 }
+
+.btn-primary {
+    color: #fff !important;
+}
