@@ -17,8 +17,8 @@ $(document).ready(function ($) {
             var tbl = '';
             //add data
             tbl += '<tr>';
-            tbl += '<td ><div class="row_data" edit_type="click" col_name="name">' + val['name'] + '</div></td>';
-            tbl += '<td ><div class="row_data" edit_type="click" col_name="value">' + val['value'] + '</div></td>';
+            tbl += '<td ><div contentEditable=true data-text="Click to edit" class="row_data placeholder" edit_type="click" col_name="name">' + val['name'] + '</div></td>';
+            tbl += '<td ><div contentEditable=true data-text="Click to edit" class="row_data placeholder" edit_type="click" col_name="value">' + val['value'] + '</div></td>';
             //add delete button
             tbl += '<td>';
             tbl += '<button class="btn btn-danger delete-row">Delete</button>';
@@ -64,7 +64,7 @@ $(document).ready(function ($) {
 
     //Add a new row
     $('.add-row').click(function () {
-        $('#myTable tbody').append('<tr><td><div class="row_data" edit_type="click" col_name="name">click to edit</div></td><td><div class="row_data" edit_type="click" col_name="value">click to edit</div></td><td><button class="btn btn-danger delete-row">Delete</button></td></tr>');
+        $('#myTable tbody').append('<tr><td><div contentEditable=true data-text="Click to edit" class="row_data placeholder" edit_type="click" col_name="name"></div></td><td><div contentEditable=true data-text="Click to edit" class="row_data placeholder" edit_type="click" col_name="value"></div></td><td><button class="btn btn-danger delete-row">Delete</button></td></tr>');
         store();
     });
 

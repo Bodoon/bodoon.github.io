@@ -54,3 +54,8 @@ th {
 .btn-primary {
     color: #fff !important;
 }
+
+/*placeholder for div*/
+.placeholder:empty:not(:focus):before{
+    content:attr(data-text)
+}
