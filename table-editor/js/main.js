@@ -10,9 +10,9 @@ $(document).ready(function ($) {
         window.localStorage.localTable = document.getElementById('table-body').innerHTML;
     }
 
-    
+
     //create table body rows    
-    function addData(ajax_data) {       
+    function addData(ajax_data) {
         $.each(ajax_data, function (index, val) {
             var tbl = '';
             //add data
@@ -28,7 +28,7 @@ $(document).ready(function ($) {
             $("#table-body").append(tbl);
         });
         store();
-        
+
     }
 
     //make table-cell editable
@@ -74,6 +74,32 @@ $(document).ready(function ($) {
         store();
     });
 
+    // Parse a CSV row, accounting for commas inside quotes                   
+    function parse(row) {
+        var insideQuote = false,
+            entries = [],
+            entry = [];
+        row.split('').forEach(function (character) {
+            if (character === '"') {
+                insideQuote = !insideQuote;
+            } else {
+                if (character == "," && !insideQuote) {
+                    entries.push(entry.join(''));
+                    entry = [];
+                } else {
+                    entry.push(character);
+                }
+            }
+        });
+        entries.push(entry.join(''));
+        
+        for (var i in entries) {
+            entries[i] = entries[i].trim();
+        }
+
+        return entries;
+    }
+
     //select multiple files
     function handleFileSelect(evt) {
         var files = evt.target.files; // FileList object
@@ -81,15 +107,48 @@ $(document).ready(function ($) {
         // files is a FileList of File objects
         for (var i = 0, f; f = files[i]; i++) {
             if (f) {
-                var r = new FileReader();
-                r.onload = function (e) {
-                    //read data from file and add to table                  
-                    addData(JSON.parse(e.target.result));
+                if (f.type == "application/json") {
+                    var r = new FileReader();
+                    r.onload = function (e) {
+                        //read data from file and add to table                  
+                        addData(JSON.parse(e.target.result));
+                    }
+                    r.readAsText(f);
+
+                } else {
+                    var r = new FileReader();
+                    r.onload = function (e) {
+                        //read data from csv file
+                        var csv = e.target.result,
+
+                            // Split the input into lines
+                            lines = csv.split('\n'),
+
+                            // Extract column names from the first line
+                            columnNamesLine = lines[0],
+                            columnNames = parse(columnNamesLine),
+
+                            // Extract data from subsequent lines
+                            dataLines = lines.slice(1),
+                            data = dataLines.map(parse);
+
+
+                        var dataObjects = data.map(function (arr) {
+                            var dataObject = {};
+                            columnNames.forEach(function (columnName, i) {
+                                dataObject[columnName] = arr[i];
+                            });
+                            return dataObject;
+                        });
+                    
+                        addData(dataObjects);
+                    }
+                    r.readAsText(f);                    
                 }
-                r.readAsText(f);
             } else {
                 alert("Failed to load file");
             }
+            document.getElementById('files').value = null;
         }
     }
     document.getElementById('files').addEventListener('change', handleFileSelect, false);
@@ -111,7 +170,7 @@ $(document).ready(function ($) {
         return textFile;
     };
 
-    var link = document.getElementById('downloadlink');    
+    var link = document.getElementById('downloadlink');
 
     link.addEventListener('click', function () {
         //converts table to JSON ignoring 3rd column | --> https://www.github.developerdan.com/table-to-json/ <--
