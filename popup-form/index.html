@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Popup</title>
+	<link rel="stylesheet" href="styles.css" type="text/css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<div class="container">
+		<div class="popup">
+			<div class="popup__header">
+				<button class="popup__close">
+					<img src="svg/close.svg">
+				</button>
+				<div class="popup__header-text">
+					Log in to the Site
+				</div>
+			</div>
+			<div class="popup__body">
+				<div class="col-1-of-2">
+					<button class="button button__text  button--fb">
+						<img class="button__icon" src="svg/facebook.svg">
+						Log in with Facebook
+					</button>
+					<button class="button button__text button--google">
+						<img class="button__icon" src="svg/google+.svg">
+						Log in with Google +
+					</button>
+				</div>
+				<div class="col-2-of-2">
+					<form action="">
+						<div class="form-field  form-field--error">
+							<label for="login">Login</label>
+							<input type="email" name="login" id="login">
+						</div>
+						<div class="form-field">
+							<label for="password">Password</label>
+							<input type="password" name="password" id="password">
+						</div>
+						<div class="form-field">
+							<input type="checkbox" name="remember" id="remember" checked>
+							<label for="remember">Remember me</label>							
+						</div>
+						<div class="form-field">
+							<button class="button--login button__text">Log in</button>
+							<a class="login help" href="#">Need help logging in?</a>
+						</div>
+					</form>
+				</div>
+				<div class="clearfix"></div>
+			</div><!--end of popup body-->
+			<div class="popup__footer">
+				<span >Dont have an account yet?</span>
+				<a class="sign-up help" href="#">Sign up</a>
+			</div><!--end of popup footer-->
+		</div><!--end of popup-->
+	</div><!--end of popup container-->
+</body>
+</html>
